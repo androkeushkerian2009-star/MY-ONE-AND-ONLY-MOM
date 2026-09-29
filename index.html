@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>إلى أمي ❤️</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: "Tahoma", "Arial", sans-serif;
+            background: linear-gradient(135deg, #fff7f3, #ffe8ec, #fffaf5);
+            color: #513b40;
+            overflow-x: hidden;
+        }
+
+        /* Floating hearts */
+
+        .heart-bg {
+            position: fixed;
+            font-size: 25px;
+            opacity: .15;
+            animation: floatUp 8s linear infinite;
+            pointer-events: none;
+        }
+
+        .h1 { right: 10%; animation-delay: 0s; }
+        .h2 { right: 30%; animation-delay: 2s; }
+        .h3 { right: 55%; animation-delay: 4s; }
+        .h4 { right: 80%; animation-delay: 1s; }
+
+        @keyframes floatUp {
+            from {
+                transform: translateY(110vh);
+            }
+
+            to {
+                transform: translateY(-20vh);
+            }
+        }
+
+        /* Main screen */
+
+        .screen {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .card {
+            width: min(700px, 95%);
+            padding: 50px 30px;
+            background: rgba(255, 255, 255, .75);
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(120, 60, 80, .15);
+            backdrop-filter: blur(12px);
+        }
+
+        .flower {
+            font-size: 55px;
+            margin-bottom: 15px;
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        h1 {
+            font-size: clamp(42px, 9vw, 72px);
+            color: #a65c70;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 30px;
+            color: #a65c70;
+            margin-bottom: 25px;
+        }
+
+        p {
+            font-size: 19px;
+            line-height: 2;
+        }
+
+        .subtitle {
+            font-size: 21px;
+            margin-bottom: 35px;
+        }
+
+        /* Buttons */
+
+        button {
+            border: none;
+            padding: 15px 28px;
+            border-radius: 50px;
+            background: #a65c70;
+            color: white;
+            font-size: 17px;
+            cursor: pointer;
+            transition: .3s;
+            box-shadow: 0 8px 20px rgba(166, 92, 112, .25);
+            font-family: inherit;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            background: #914d60;
+        }
+
+        .music-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 100;
+            padding: 12px 18px;
+            font-size: 14px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Letter */
+
+        .letter {
+            text-align: right;
+            background: #fffaf5;
+            padding: 30px;
+            border-radius: 20px;
+            margin-top: 20px;
+            box-shadow: inset 0 0 30px rgba(150, 100, 100, .06);
+        }
+
+        .letter p {
+            margin-bottom: 18px;
+        }
+
+        .signature {
+            text-align: left;
+            font-size: 23px;
+            color: #a65c70;
+            margin-top: 25px;
+        }
+
+        /* Reasons */
+
+        .reasons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .reason {
+            padding: 25px 15px;
+            background: white;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(120, 60, 80, .08);
+            font-size: 17px;
+            transition: .3s;
+        }
+
+        .reason:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Photo */
+
+        .photo-box {
+            margin-top: 30px;
+        }
+
+        .photo-box img {
+            width: 100%;
+            max-width: 500px;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 22px;
+            box-shadow: 0 12px 30px rgba(120, 60, 80, .15);
+        }
+
+        /* Final */
+
+        .final-heart {
+            font-size: 75px;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+        }
+
+        .small {
+            font-size: 15px;
+            opacity: .7;
+            margin-top: 20px;
+        }
+
+        /* Fade */
+
+        .fade {
+            animation: fade .8s ease;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .card {
+                padding: 40px 20px;
+            }
+
+            .letter {
+                padding: 22px;
+            }
+
+            p {
+                font-size: 17px;
+            }
+
+            .music-button {
+                top: 12px;
+                left: 12px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- Floating hearts -->
+
+    <div class="heart-bg h1">❤️</div>
+    <div class="heart-bg h2">🌸</div>
+    <div class="heart-bg h3">❤️</div>
+    <div class="heart-bg h4">🌷</div>
+
+
+    <!-- Music -->
+
+    <audio id="music" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <button class="music-button" onclick="toggleMusic()" id="musicButton">
+        🎵 تشغيل الموسيقى
+    </button>
+
+
+    <!-- الصفحة الأولى -->
+
+    <section class="screen" id="home">
+
+        <div class="card fade">
+
+            <div class="flower">
+                🌷
+            </div>
+
+            <h1>
+                إلى أمي
+            </h1>
+
+            <p class="subtitle">
+                صنعت لكِ شيئًا صغيرًا من قلبي... ❤️
+            </p>
+
+            <button onclick="openLetter()">
+                افتحي مفاجأتك ❤️
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- الرسالة -->
+
+    <section class="screen hidden" id="letterSection">
+
+        <div class="card fade">
+
+            <div class="flower">
+                💐
+            </div>
+
+            <h2>
+                رسالة صغيرة لكِ
+            </h2>
+
+            <div class="letter">
+
+                <p>
+                    أمي الغالية،
+                </p>
+
+                <p>
+                    أعرف أنني لا أقول لكِ هذا دائمًا، وربما لا أُظهره
+                    بالشكل الكافي، لكنني أريدكِ أن تعرفي كم أنتِ
+                    مهمة بالنسبة لي.
+                </p>
+
+                <p>
+                    شكرًا على كل شيء فعلتِه من أجلي، وعلى كل تضحية،
+                    وكل مرة كنتِ فيها بجانبي، وكل لحظة جعلتِ فيها
+                    حياتي أجمل.
+                </p>
+
+                <p>
+                    كنتِ دائمًا بجانبي في الأيام الجميلة، وفي الأيام
+                    الصعبة، وفي كل لحظة بينهما.
+                </p>
+
+                <p>
+                    ومهما كبرت، ومهما تغيرت الحياة، ستبقين دائمًا
+                    أمي، وستبقى هناك دائمًا قطعة مني تحتاج إليكِ.
+                </p>
+
+                <p>
+                    ربما لا أقول لكِ "شكرًا" بما يكفي، لكنني ألاحظ
+                    وأقدّر أكثر بكثير مما تتخيلين.
+                </p>
+
+                <div class="signature">
+                    مع كل حبي،<br>
+                    أندرو ❤️
+                </div>
+
+            </div>
+
+            <br>
+
+            <button onclick="showReasons()">
+                هناك شيء آخر ←
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- الأشياء الجميلة -->
+
+    <section class="screen hidden" id="reasonsSection">
+
+        <div class="card fade">
+
+            <div class="flower">
+                🌸
+            </div>
+
+            <h2>
+                بعض الأشياء التي أحبها فيكِ
+            </h2>
+
+            <div class="reasons">
+
+                <div class="reason">
+                    ❤️ لأنكِ تهتمين دائمًا
+                </div>
+
+                <div class="reason">
+                    🌷 لأنكِ تجعلينني أشعر أنني في بيتي
+                </div>
+
+                <div class="reason">
+                    🫶 لأنكِ تؤمنين بي
+                </div>
+
+                <div class="reason">
+                    ✨ لأنكِ دائمًا تبذلين قصارى جهدكِ
+                </div>
+
+                <div class="reason">
+                    😊 لأنكِ تعرفين كيف تجعلينني أبتسم
+                </div>
+
+                <div class="reason">
+                    🏡 لأنكِ تجعلين البيت مكانًا مميزًا
+                </div>
+
+                <div class="reason">
+                    💗 لأنكِ لا تتوقفين أبدًا عن الوقوف بجانبي
+                </div>
+
+                <div class="reason">
+                    🌎 لأنكِ تعنين لي أكثر مما تستطيع الكلمات وصفه
+                </div>
+
+            </div>
+
+
+            <!-- الصورة -->
+
+            <div class="photo-box">
+
+                <img src="mom.jpg" alt="ذكرى جميلة">
+
+            </div>
+
+            <br><br>
+
+            <button onclick="showFinal()">
+                هناك مفاجأة في النهاية ❤️
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- النهاية -->
+
+    <section class="screen hidden" id="finalSection">
+
+        <div class="card final fade">
+
+            <div class="final-heart">
+                ❤️
+            </div>
+
+            <h1>
+                شكرًا لكِ يا أمي
+            </h1>
+
+            <p>
+                على كل شيء.
+            </p>
+
+            <br>
+
+            <p>
+                مهما حدث في الحياة،
+                ومهما كبرت،
+                ومهما أخذتني الحياة إلى أماكن مختلفة...
+            </p>
+
+            <br>
+
+            <h2>
+                ستبقين دائمًا أمي. 🌷
+            </h2>
+
+            <p class="small">
+                هذا الموقع الصغير لا يستطيع أن يقول كل شيء،
+                لكنني صنعته خصيصًا لكِ.
+            </p>
+
+            <br>
+
+            <p>
+                ❤️ أحبكِ ❤️
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <script>
+
+        /* الانتقال بين الصفحات */
+
+        function switchScreen(current, next) {
+
+            document.getElementById(current).classList.add("hidden");
+
+            document.getElementById(next).classList.remove("hidden");
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+
+
+        function openLetter() {
+
+            switchScreen("home", "letterSection");
+
+            playMusic();
+
+        }
+
+
+        function showReasons() {
+
+            switchScreen("letterSection", "reasonsSection");
+
+        }
+
+
+        function showFinal() {
+
+            switchScreen("reasonsSection", "finalSection");
+
+        }
+
+
+        /* الموسيقى */
+
+        const music = document.getElementById("music");
+
+        const musicButton = document.getElementById("musicButton");
+
+
+        function playMusic() {
+
+            music.play().then(() => {
+
+                musicButton.innerHTML = "🔊 إيقاف الموسيقى";
+
+            }).catch(() => {
+
+                musicButton.innerHTML = "🎵 تشغيل الموسيقى";
+
+            });
+
+        }
+
+
+        function toggleMusic() {
+
+            if (music.paused) {
+
+                music.play();
+
+                musicButton.innerHTML = "🔊 إيقاف الموسيقى";
+
+            } else {
+
+                music.pause();
+
+                musicButton.innerHTML = "🎵 تشغيل الموسيقى";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
