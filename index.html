@@ -1,1 +1,363 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Mom ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Georgia, "Times New Roman", serif;
+    background: linear-gradient(135deg, #fff7f3, #ffe8ec, #fffaf5);
+    color: #513b40;
+    overflow-x: hidden;
+}
+
+.screen {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    text-align: center;
+}
+
+.card {
+    width: min(700px, 95%);
+    padding: 55px 35px;
+    background: rgba(255,255,255,.72);
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(120,60,80,.15);
+    backdrop-filter: blur(10px);
+}
+
+.flower {
+    font-size: 55px;
+    margin-bottom: 15px;
+    animation: float 3s ease-in-out infinite;
+}
+
+h1 {
+    font-size: clamp(42px, 8vw, 72px);
+    color: #a65c70;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 32px;
+    color: #a65c70;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+.subtitle {
+    font-size: 20px;
+    margin-bottom: 35px;
+}
+
+button {
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    background: #a65c70;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    transition: .3s;
+    box-shadow: 0 8px 20px rgba(166,92,112,.25);
+}
+
+button:hover {
+    transform: translateY(-3px);
+    background: #914d60;
+}
+
+.hidden {
+    display: none;
+}
+
+.letter {
+    text-align: left;
+    background: #fffaf5;
+    padding: 35px;
+    border-radius: 20px;
+    margin-top: 25px;
+    box-shadow: inset 0 0 30px rgba(150,100,100,.06);
+}
+
+.letter p {
+    margin-bottom: 18px;
+}
+
+.signature {
+    text-align: right;
+    font-size: 25px;
+    color: #a65c70;
+    margin-top: 25px;
+}
+
+.reasons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.reason {
+    padding: 25px 15px;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(120,60,80,.08);
+    font-size: 17px;
+    transition: .3s;
+}
+
+.reason:hover {
+    transform: translateY(-5px);
+}
+
+.photo-box {
+    margin-top: 30px;
+    height: 180px;
+    border: 2px dashed #d49aaa;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #a65c70;
+    font-size: 18px;
+}
+
+.final {
+    position: relative;
+}
+
+.heart {
+    font-size: 70px;
+    animation: heartbeat 1.5s infinite;
+}
+
+.small {
+    font-size: 16px;
+    opacity: .7;
+    margin-top: 15px;
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes heartbeat {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+
+.fade {
+    animation: fade .8s ease;
+}
+
+@keyframes fade {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+
+<!-- OPENING -->
+<section class="screen" id="home">
+    <div class="card fade">
+        <div class="flower">🌷</div>
+
+        <h1>For Mom</h1>
+
+        <p class="subtitle">
+            I made you a little something...
+        </p>
+
+        <button onclick="openLetter()">
+            Open Your Surprise ❤️
+        </button>
+    </div>
+</section>
+
+
+<!-- LETTER -->
+<section class="screen hidden" id="letterSection">
+    <div class="card fade">
+
+        <div class="flower">💐</div>
+
+        <h2>A Little Letter For You</h2>
+
+        <div class="letter">
+
+            <p>Dear Mom,</p>
+
+            <p>
+                I know I don't always say it, and sometimes I probably
+                don't show it enough, but I want you to know how much
+                you mean to me.
+            </p>
+
+            <p>
+                Thank you for everything you've done for me, for every
+                little thing you've sacrificed, every time you've been
+                there for me, and every moment you've made life better.
+            </p>
+
+            <p>
+                You have been there through the good days, the bad days,
+                the stressful days and everything in between.
+            </p>
+
+            <p>
+                And no matter how much I grow up, there will always be
+                a part of me that needs my mom.
+            </p>
+
+            <p>
+                I may not say "thank you" enough, but I hope you know
+                that I notice more than you think.
+            </p>
+
+            <div class="signature">
+                Love,<br>
+                Andrew ❤️
+            </div>
+
+        </div>
+
+        <br><br>
+
+        <button onclick="showReasons()">
+            One More Thing →
+        </button>
+
+    </div>
+</section>
+
+
+<!-- REASONS -->
+<section class="screen hidden" id="reasonsSection">
+    <div class="card fade">
+
+        <div class="flower">🌸</div>
+
+        <h2>Some Things I Love About You</h2>
+
+        <div class="reasons">
+
+            <div class="reason">❤️ You always care</div>
+
+            <div class="reason">🌷 You make me feel at home</div>
+
+            <div class="reason">🫶 You believe in me</div>
+
+            <div class="reason">✨ You always try your best</div>
+
+            <div class="reason">😊 You know how to make me smile</div>
+
+            <div class="reason">🏡 You make home feel like home</div>
+
+            <div class="reason">💗 You never stop being there</div>
+
+            <div class="reason">🌎 You mean more to me than words can say</div>
+
+        </div>
+
+        <div class="photo-box">
+            📸 Put one of our favorite photos here
+        </div>
+
+        <br><br>
+
+        <button onclick="showFinal()">
+            There's Something At The End ❤️
+        </button>
+
+    </div>
+</section>
+
+
+<!-- FINAL -->
+<section class="screen hidden" id="finalSection">
+    <div class="card final fade">
+
+        <div class="heart">❤️</div>
+
+        <h1>Thank You, Mom.</h1>
+
+        <p>
+            For everything.
+        </p>
+
+        <br>
+
+        <p>
+            Whatever happens in life,
+            wherever I go,
+            and no matter how old I get...
+        </p>
+
+        <br>
+
+        <h2>
+            You'll always be my mom. 🌷
+        </h2>
+
+        <p class="small">
+            This little website can't possibly say everything,
+            but I made it just for you.
+        </p>
+
+        <br><br>
+
+        <p>❤️ I love you ❤️</p>
+
+    </div>
+</section>
+
+
+<script>
+
+function switchScreen(current, next) {
+    document.getElementById(current).classList.add("hidden");
+    document.getElementById(next).classList.remove("hidden");
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+function openLetter() {
+    switchScreen("home", "letterSection");
+}
+
+function showReasons() {
+    switchScreen("letterSection", "reasonsSection");
+}
+
+function showFinal() {
+    switchScreen("reasonsSection", "finalSection");
+}
+
+</script>
+
+</body>
+</html>
